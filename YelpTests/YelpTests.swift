@@ -2,12 +2,12 @@
 //  YelpTests.swift
 //  YelpTests
 //
-//  Created by Christopher Yang on 1/26/16.
-//  Copyright © 2016 Christopher Yang. All rights reserved.
+//  Created by Timothy Lee on 9/19/14.
+//  Copyright (c) 2014 Timothy Lee. All rights reserved.
 //
 
+import UIKit
 import XCTest
-@testable import Yelp
 
 class YelpTests: XCTestCase {
     
@@ -23,12 +23,12 @@ class YelpTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Pass")
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
