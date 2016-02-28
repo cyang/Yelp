@@ -23,7 +23,7 @@ class BusinessCell: UITableViewCell {
         didSet {
             thumbImageView.setImageWithURL(business.imageURL!)
             ratingImageView.setImageWithURL(business.ratingImageURL!)
-            
+                        
             nameLabel.text = business.name
             distanceLabel.text = business.distance
             reviewsCountLabel.text = "\(business.reviewCount!) Reviews"

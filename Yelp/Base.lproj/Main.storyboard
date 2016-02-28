@@ -50,6 +50,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfU-Bj-CQM">
                                                     <rect key="frame" x="81" y="52" width="231" height="16"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -110,6 +111,7 @@
                                             <outlet property="ratingImageView" destination="SRG-Iu-m52" id="1p1-0m-Sol"/>
                                             <outlet property="reviewsCountLabel" destination="YX5-zY-lax" id="BbN-J6-s2K"/>
                                             <outlet property="thumbImageView" destination="93B-Us-0GX" id="hh8-aY-uc0"/>
+                                            <segue destination="4jg-wr-xWz" kind="modal" id="Rnt-gI-JC6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -137,6 +139,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgb-4b-F1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1485" y="338"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="yX0-rD-7rN">
+            <objects>
+                <viewController id="P75-iW-xTW" customClass="MapViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xpo-ir-n4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="TfT-gH-VOv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NFR-X0-gju">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DXr-3F-rli">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DXr-3F-rli" secondAttribute="trailing" id="HrB-uM-cp9"/>
+                            <constraint firstItem="DXr-3F-rli" firstAttribute="top" secondItem="Xpo-ir-n4d" secondAttribute="bottom" id="LMc-2S-eph"/>
+                            <constraint firstItem="DXr-3F-rli" firstAttribute="leading" secondItem="NFR-X0-gju" secondAttribute="leading" id="Olm-Ee-w9j"/>
+                            <constraint firstItem="TfT-gH-VOv" firstAttribute="top" secondItem="DXr-3F-rli" secondAttribute="bottom" id="dCq-um-wDr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lQL-Rv-zFH">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Ulg-It-IfR">
+                            <connections>
+                                <action selector="onBackButton:" destination="P75-iW-xTW" id="6jP-zt-dX9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="DXr-3F-rli" id="ebl-wH-5wn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0MT-pE-Axz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023" y="985"/>
         </scene>
         <!--Filters-->
         <scene sceneID="QLo-lh-icT">
@@ -252,6 +293,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Twt-kt-e6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1966" y="338"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jwx-5g-vKj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4jg-wr-xWz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hkJ-2K-ZzC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P75-iW-xTW" kind="relationship" relationship="rootViewController" id="D8s-l7-by5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewM-at-Ux5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="985"/>
         </scene>
     </scenes>
 </document>
